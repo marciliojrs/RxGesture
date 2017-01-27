@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD6FD6DD1E3BAEC3002C3FEA /* LongPressConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6FD6DC1E3BAEC3002C3FEA /* LongPressConfig.swift */; };
 		F4CC4C221DEBA895009ED835 /* RxGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = F4CC4C201DEBA895009ED835 /* RxGesture.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F4CC4C341DEBAA40009ED835 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = F4CC4C2B1DEBAA40009ED835 /* .gitkeep */; };
 		F4CC4C351DEBAA40009ED835 /* UIView+RxGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC4C2D1DEBAA40009ED835 /* UIView+RxGesture.swift */; };
 		F4CC4C381DEBAA40009ED835 /* PanConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC4C311DEBAA40009ED835 /* PanConfig.swift */; };
 		F4CC4C3A1DEBAA40009ED835 /* RxGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CC4C331DEBAA40009ED835 /* RxGesture.swift */; };
@@ -19,17 +19,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD6FD6DC1E3BAEC3002C3FEA /* LongPressConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressConfig.swift; sourceTree = "<group>"; };
 		F4CC4C1D1DEBA895009ED835 /* RxGesture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxGesture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CC4C201DEBA895009ED835 /* RxGesture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxGesture.h; sourceTree = "<group>"; };
 		F4CC4C211DEBA895009ED835 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4CC4C2B1DEBAA40009ED835 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		F4CC4C2D1DEBAA40009ED835 /* UIView+RxGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+RxGesture.swift"; sourceTree = "<group>"; };
 		F4CC4C2F1DEBAA40009ED835 /* NSGestureRecognizer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSGestureRecognizer+Rx.swift"; sourceTree = "<group>"; };
 		F4CC4C301DEBAA40009ED835 /* NSView+RxGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSView+RxGesture.swift"; sourceTree = "<group>"; };
 		F4CC4C311DEBAA40009ED835 /* PanConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanConfig.swift; sourceTree = "<group>"; };
 		F4CC4C321DEBAA40009ED835 /* RotateConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateConfig.swift; sourceTree = "<group>"; };
 		F4CC4C331DEBAA40009ED835 /* RxGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxGesture.swift; sourceTree = "<group>"; };
-		F4CC4C4D1DEBAC8A009ED835 /* RxGesture copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "RxGesture copy-Info.plist"; path = "/Users/home/Developer/GitHub/RxGesture/RxGesture/RxGesture copy-Info.plist"; sourceTree = "<absolute>"; };
 		F4CC4C4F1DEBACC7009ED835 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F4CC4C531DEBAD9E009ED835 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		F4CC4C541DEBAD9E009ED835 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -54,7 +53,6 @@
 			children = (
 				F4CC4C1F1DEBA895009ED835 /* RxGesture */,
 				F4CC4C1E1DEBA895009ED835 /* Products */,
-				F4CC4C4D1DEBAC8A009ED835 /* RxGesture copy-Info.plist */,
 				F4CC4C4E1DEBACC7009ED835 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -80,11 +78,11 @@
 		F4CC4C2A1DEBAA40009ED835 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F4CC4C2B1DEBAA40009ED835 /* .gitkeep */,
 				F4CC4C2C1DEBAA40009ED835 /* iOS */,
 				F4CC4C2E1DEBAA40009ED835 /* OSX */,
 				F4CC4C311DEBAA40009ED835 /* PanConfig.swift */,
 				F4CC4C321DEBAA40009ED835 /* RotateConfig.swift */,
+				AD6FD6DC1E3BAEC3002C3FEA /* LongPressConfig.swift */,
 				F4CC4C331DEBAA40009ED835 /* RxGesture.swift */,
 			);
 			name = Classes;
@@ -187,7 +185,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4CC4C341DEBAA40009ED835 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +197,7 @@
 			files = (
 				F4CC4C3A1DEBAA40009ED835 /* RxGesture.swift in Sources */,
 				F4CC4C351DEBAA40009ED835 /* UIView+RxGesture.swift in Sources */,
+				AD6FD6DD1E3BAEC3002C3FEA /* LongPressConfig.swift in Sources */,
 				F4CC4C3B1DEBAA62009ED835 /* RotateConfig.swift in Sources */,
 				F4CC4C381DEBAA40009ED835 /* PanConfig.swift in Sources */,
 			);

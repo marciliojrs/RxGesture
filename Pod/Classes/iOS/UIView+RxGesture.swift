@@ -81,13 +81,58 @@ extension Reactive where Base: UIView {
             }
             
             //long press
-            if type.contains(.longPress) {
-                let press = UILongPressGestureRecognizer()
-                control.addGestureRecognizer(press)
-                gestures.append(
-                    (press, press.rx.event.map {_ in RxGestureTypeOption.longPress}
-                        .bindNext(observer.onNext))
-                )
+            if type.contains(.longPress(.any)) {
+                //create or find existing recognizer
+                var recognizer: UILongPressGestureRecognizer
+
+                if let existingLongPress = control.gestureRecognizers?.filter({ $0 is UILongPressGestureRecognizer }).first as? UILongPressGestureRecognizer {
+                    recognizer = existingLongPress
+                } else {
+                    recognizer = UILongPressGestureRecognizer()
+                    control.addGestureRecognizer(recognizer)
+                }
+
+                //observable
+                let longPressEvent = recognizer.rx.event.shareReplay(1)
+
+                //long press
+                for longPressGesture in type where longPressGesture == .longPress(.any) {
+
+                    switch longPressGesture {
+                    case (.longPress(let config)):
+                        //observe long press
+                        let longPressObservable = longPressEvent.filter { recognizer -> Bool in
+                            if config.state == .began && recognizer.state != .began { return false }
+                            if config.state == .changed && recognizer.state != .changed { return false }
+                            if config.state == .ended && recognizer.state != .ended { return false }
+                            return true
+                        }.map { recognizer -> RxGestureTypeOption in
+                            //current values
+                            var newState: LongPressConfig.State = .any
+                            switch recognizer.state {
+                            case .began: newState = .began
+                            case .ended: newState = .ended
+                            case .changed: newState = .changed
+                            default: newState = .any
+                            }
+
+                            let newConfig = LongPressConfig(location: recognizer.location(in: control.superview),
+                                                            state: newState,
+                                                            recognizer: recognizer)
+                            return RxGestureTypeOption.longPress(newConfig)
+                        }
+
+                        guard config.location != .zero else {
+                            gestures.append((recognizer, longPressObservable.bindNext(observer.onNext)))
+                            break
+                        }
+
+                        gestures.append(
+                            (recognizer, longPressObservable.bindNext(observer.onNext))
+                        )
+                    default: break
+                    }
+                }
             }
             
             //panning

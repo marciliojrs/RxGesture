@@ -28,7 +28,7 @@ public enum RxGestureTypeOption: Equatable {
     case tap
 	case tapNumberOfTimes(Int)
     case swipeLeft, swipeRight, swipeUp, swipeDown
-    case longPress
+    case longPress(LongPressConfig)
     
     //: Shared gestures
     case pan(PanConfig)
@@ -40,7 +40,7 @@ public enum RxGestureTypeOption: Equatable {
 
     public static func all() -> [RxGestureTypeOption] {
         return [
-            .tap, .tapNumberOfTimes(0), .swipeLeft, .swipeRight, .swipeUp, .swipeDown, .longPress, .pan(.any), rotate(.any),
+            .tap, .tapNumberOfTimes(0), .swipeLeft, .swipeRight, .swipeUp, .swipeDown, .longPress(.any), .pan(.any), rotate(.any),
             .click, .rightClick, .clickNumberOfTimes(0)
         ]
     }
